@@ -1,0 +1,42 @@
+{
+  "name": "SikhiToTheMax-Web",
+  "version": "1.0.0",
+  "description": "Sevadaars are currently working hard to build newer version of SikhiToTheMax website using modern web technologies.",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "webpack": "webpack",
+    "deploy": "now"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KhalisFoundation/SikhiToTheMax-Web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GSL",
+  "bugs": {
+    "url": "https://github.com/KhalisFoundation/SikhiToTheMax-Web/issues"
+  },
+  "homepage": "https://github.com/KhalisFoundation/SikhiToTheMax-Web#readme",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.8",
+    "now": "^4.5.6",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "babel": {
+    "presets": [
+      ["env", {
+        "targets": {
+          "browsers": ["> 1%", "ie 11", "safari 9"]
+        }
+      }]
+    ]
+  }
+}
