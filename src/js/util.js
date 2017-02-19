@@ -1,4 +1,14 @@
-function h(type = 'div', attributes = { }, children = '') {
+export function documentReady(cb) {
+  return new Promise(cb => {
+    if (document.readyState != 'loading'){
+      cb(); 
+    } else {
+      document.addEventListener('DOMContentLoaded', cb);
+    }
+  });
+}
+
+export function h(type = 'div', attributes = { }, children = '') {
   let el = document.createElement(type);
 
   Object.keys(attributes).forEach(key => {

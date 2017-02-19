@@ -1,4 +1,4 @@
-function renderShabad(gurbani) {
+export function renderShabad(gurbani) {
   $shabad.appendChild(h('div', { class: 'shabad-container' }, [ baani(gurbani), ]));
   $.each(prefs.displayOptions, function(index, option) {
     $("#" + option).click();
@@ -9,7 +9,7 @@ function renderShabad(gurbani) {
   $controls.classList.remove('hidden');
 }
 
-function metaData(data) {
+export function metaData(data) {
   let page_type_gurmukhi  = data.source.id == 'G' ? 'AMg' : 'pMnw';
   let page_type_english   = data.source.id == 'G' ? 'Ang' : 'Pannaa';
   let gurmukhi_meta       = [];
@@ -34,7 +34,7 @@ function metaData(data) {
   $meta.classList.remove('hidden');
 }
 
-function baani(gurbani) {
+export function baani(gurbani) {
   return h('div', { class: 'shabad-content' } , gurbani.map(({ shabad }) => h('div', { id: 'line-' + shabad.id, class: 'line' }, [
     h('p', { class: 'gurmukhi gurbani-display gurbani-font' }, [
       h('div', { class: 'gurlipi' }, prepareLarivaar(shabad.gurbani.gurmukhi)),
@@ -59,7 +59,7 @@ function baani(gurbani) {
   ])));
 }
 
-function prepareLarivaar(padChhed) {
+export function prepareLarivaar(padChhed) {
   let shabads = padChhed.split(' ');
   let newLine = '';
   Array.from(shabads).forEach(val => {

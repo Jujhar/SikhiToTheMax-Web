@@ -15,4 +15,4 @@ app.use(express.static(`${__dirname}/../dist`));
 app.get('*', (req, res) => res.send(buildTemplate(req)));
 
 // listen
-app.listen('8080', (...args) => console.log(args));
+app.listen('8080', e => console.log("Server started"));

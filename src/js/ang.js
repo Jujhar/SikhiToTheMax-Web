@@ -1,21 +1,21 @@
-'use strict';
+import { renderShabad, metaData } from './renderShabad';
+import { buildApiUrl } from './khajana';
+import h from './h';
+
 const H3 = children => h('h3', { class: 'text-center' }, children);
 
-$(function() {
-  const [ang, source] = ['ang', 'source'].map(v => getParameterByName(v))
-
+//const [ang, source] = ['ang', 'source'].map(v => getParameterByName(v))
+export default function loadAng({ ang, source }) {
   $shabad.appendChild(H3('Loading...'));
-  $.ajax({
-    url: buildApiUrl({ ang, source }),
-    dataType: "json",
-    success: function(data) {
+
+  fetch(buildApiUrl({ ang, source }))
+    .then(data => {
       $shabad.innerHTML = '';
       metaData(data);
       renderShabad(data.page);
-    },
-    error: showError
-  });
-});
+    })
+    .catch(err => showError(err));
+}
 
 function showError(error) {
   $shabad.appendChild(h('h2', { }, [

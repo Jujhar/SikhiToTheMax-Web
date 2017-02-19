@@ -1,7 +1,6 @@
-'use strict';
-const API_URL = `https://devapi.khajana.org/`;
+export const API_URL = `https://devapi.khajana.org/`;
 
-const TYPES = [
+export const TYPES = [
   'First Letter Start (Gurmukhi)',
   'First Letter Anywhere (Gurmukhi)',
   'Full Word (Gurakhar)',
@@ -9,7 +8,7 @@ const TYPES = [
   'Romanized (English)',
 ];
 
-const SOURCES = {
+export const SOURCES = {
   all: 'All Sources',
   G: 'Guru Granth Sahib Ji',
   D: 'Dasam Granth Sahib',
@@ -18,7 +17,7 @@ const SOURCES = {
   A: 'Amrit Keertan',
 };
 
-const buildApiUrl = options => {
+export const buildApiUrl = options => {
   const {
     q = false,
     source = false,
